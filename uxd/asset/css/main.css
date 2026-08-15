@@ -1,0 +1,89 @@
+@import url('colors.css');
+
+body {
+    background-color: var(--neutral-100);
+    color: var(--neutral-900);
+}
+
+.main-menu {
+    background-color: var(--primary-800);
+    color: var(--primary-100);
+
+    & p {
+        color: var(--primary-100);
+
+        & small {
+            color: var(--primary-200);
+        }
+
+        & small::before {
+            content: " : ";
+        }
+    }
+
+    & .btn-link {
+        color: var(--primary-200);
+    }
+}
+
+.module-menu {
+    background-color: var(--primary-700);
+    color: var(--primary-100);
+
+    & .nav {
+        & .nav-link {
+            color: var(--primary-300);
+
+            & .bi {
+                background-color: var(--accent-500);
+                border-radius: 0.25rem;
+                color: var(--accent-900);
+                padding: 0.5rem;
+            }
+        }
+        
+        & .nav-link.active {
+            color: var(--primary-100);
+        }
+        
+        & .nav-link:hover {
+            color: var(--primary-200);
+
+            & .bi {
+                background-color: var(--accent-600);
+                color: var(--accent-900);
+            }
+        }
+    }
+}
+
+.functionality-menu {
+    background-color: var(--primary-600);
+    color: var(--primary-100);
+
+    & .nav {
+        & .nav-link {
+            color: var(--primary-300);
+
+            & .bi {
+                background-color: var(--accent-500);
+                border-radius: 0.25rem;
+                color: var(--accent-900);
+                padding: 0.5rem;
+            }
+        }
+        
+        & .nav-link.active {
+            color: var(--primary-100);
+        }
+        
+        & .nav-link:hover {
+            color: var(--primary-200);
+
+            & .bi {
+                background-color: var(--accent-600);
+                color: var(--accent-900);
+            }
+        }
+    }
+}

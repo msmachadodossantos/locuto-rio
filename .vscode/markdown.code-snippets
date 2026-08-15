@@ -1,0 +1,235 @@
+// Code Snippet Refactoring
+// The optimization of code snippet components requires a systematic approach focused on functional clarity and structural integrity. The primary title must be condensed into a nominal phrase that accurately reflects the body content, strictly adhering to a five-word limit. Regarding the description, it must provide a comprehensive analysis of the functionality's underlying motivations, specifying the appropriate contexts and methodologies for its implementation.
+// Prefix taxonomy shall follow a standardized format, beginning with the term insert followed by a keyword representing the snippet’s core function. Should there be a terminological discrepancy between the descriptive term and the associated HTML element, both must be included in the naming convention (e.g., insert descriptiveWord - htmlElementName). Finally, the entirety of the script must be authored in EN-US to maintain international technical consistency.
+{
+    "Configurable Markdown Heading Structure": {
+        "scope": "markdown",
+        "prefix": "insert heading - h1-h6",
+        "body": [
+            "${1|#,##,###,####,#####,######|} ${2:Heading text}",
+            "$0"
+        ],
+        "description": "Establishes a hierarchical document structure through configurable Markdown heading levels. This methodology is motivated by the necessity for accessible and logically organized content, providing the foundational scaffolding required for technical documentation, repositories, and extensive text formatting workflows."
+    },
+    "Explicit HTML Line Break Element": {
+        "scope": "markdown",
+        "prefix": "insert line break - br",
+        "body": [
+            "<br>",
+            "$0"
+        ],
+        "description": "Implements an explicit HTML line break element directly within Markdown content. This methodology is motivated by the necessity to override default paragraph parsing, enforcing strict vertical spacing without generating new block-level semantics. It is highly applicable in contexts requiring hard returns, such as formatting addresses or structured poetic verses."
+    },
+    "Markdown Strong Emphasis Styling": {
+        "scope": "markdown",
+        "prefix": "insert bold - strong",
+        "body": [
+            "**${1:Bold text}**$0"
+        ],
+        "description": "Implements strong emphasis formatting utilizing double asterisks to denote high semantic importance. This methodology is motivated by the necessity to draw explicit attention to critical terminology or phrases without altering document flow. It is widely applicable in contexts such as technical documentation and instructional guides where the visual distinction of core concepts is required."
+    },
+    "Italic Text": {
+        "scope": "markdown",
+        "prefix": "insert italic",
+        "body": [
+            "*${1:Italic text}*$0"
+        ],
+        "description": "Applies italic styling for emphasis using single asterisks. Commonly used for titles of works, foreign words, or subtle emphasis."
+    },
+    "Maximum Semantic Emphasis Styling": {
+        "scope": "markdown",
+        "prefix": "insert bold italic - strong-em",
+        "body": [
+            "***${1:Really important text}***$0"
+        ],
+        "description": "Implements maximum typographical prominence by combining strong and semantic emphasis utilizing triple asterisks. This methodology is motivated by the necessity to visually isolate critical warnings or paramount concepts from standard paragraph flow. It is exceptionally applicable in contexts such as safety alerts, severe deprecation notices, or crucial instructional directives within technical documentation."
+    },
+    "Semantic Blockquote Citation Structure": {
+        "scope": "markdown",
+        "prefix": "insert quote - blockquote",
+        "body": [
+            "> ${1:Blockquote text}",
+            "$0"
+        ],
+        "description": "Implements semantic citation formatting utilizing the greater-than symbol to logically segregate external references from the primary narrative flow. This methodology is motivated by the necessity to visually and structurally distinguish borrowed material or extended excerpts without breaking document hierarchy. It is highly applicable in contexts such as research documentation, technical specifications, and academic writing to ensure proper attribution and readability."
+    },
+    "Sequential Ordered List Item Structure": {
+        "scope": "markdown",
+        "prefix": "insert numbered list - ol",
+        "body": [
+            "1. ${1:List item text}",
+            "$0"
+        ],
+        "description": "Implements a strictly sequential enumeration structure utilizing numerical prefixes. This methodology is motivated by the necessity to convey precise operational order or hierarchical ranking without ambiguity. It is highly applicable in contexts requiring explicit step-by-step instructions, procedural technical documentation, or prioritized data sets, ensuring semantic alignment with standard HTML ordered lists."
+    },
+    "Hierarchical Ordered List Item Structure": {
+        "scope": "markdown",
+        "prefix": "insert nested list - ol",
+        "body": [
+            "    1. ${1:Nested list item}",
+            "$0"
+        ],
+        "description": "Implements an indented numerical enumeration to establish a hierarchical parent-child list relationship. This methodology is motivated by the necessity to structure complex, multi-level procedural instructions or nested taxonomies with semantic clarity. It is highly applicable in advanced technical documentation where explicit sub-steps or subordinate data categories must remain visually and logically linked to primary ordered items."
+    },
+    "Non-Sequential List Item Structure": {
+        "scope": "markdown",
+        "prefix": "insert bulleted list - ul",
+        "body": [
+            "- ${1:List item text}",
+            "$0"
+        ],
+        "description": "Implements a non-sequential enumeration structure utilizing a hyphen prefix. This methodology is motivated by the necessity to group related data points without implying a strict operational order or hierarchical ranking. It is highly applicable in contexts such as feature itemization, inventory listings, or conceptual brainstorming within technical documentation, ensuring semantic alignment with standard HTML unordered lists."
+    },
+    "Hierarchical Non-Sequential List Structure": {
+        "scope": "markdown",
+        "prefix": "insert nested bulleted list - ul",
+        "body": [
+            "    - ${1:Nested list item}",
+            "$0"
+        ],
+        "description": "Implements an indented non-sequential enumeration utilizing a spaced hyphen prefix to establish a subsidiary list relationship. This methodology is motivated by the necessity to organize related data points into specific sub-groups without implying strict operational sequence. It is highly applicable in contexts such as complex feature itemization, subordinate inventory groupings, or multi-level conceptual outlines within technical documentation."
+    },
+    "Fenced Code Block": {
+        "scope": "markdown",
+        "prefix": "insert code-block",
+        "body": [
+            "```${1:language}",
+            "${2:insert code here}",
+            "```",
+            "",
+            "$0"
+        ],
+        "description": "Creates a fenced code block for displaying multi-line code. Specifying the language after the backticks enables syntax highlighting, which is critical for readability."
+    },
+    "Image": {
+        "scope": "markdown",
+        "prefix": "insert image - img",
+        "body": [
+            "![${1:Alt text}](${2:image.png})",
+            "$0"
+        ],
+        "description": "Inserts a Markdown-formatted image. Providing descriptive alt text is essential for accessibility, as it is read by screen readers and displayed if the image cannot load."
+    },
+    "Linked Image": {
+        "scope": "markdown",
+        "prefix": "insert image-link",
+        "body": [
+            "[![${1:Alt Text}](${2:image-url.png})](${3:https://destination-url.com})",
+            "$0"
+        ],
+        "description": "Creates a clickable image that functions as a hyperlink. This is accomplished by nesting the Markdown image syntax inside the link syntax."
+    },
+    "Inline Code": {
+        "scope": "markdown",
+        "prefix": "insert inline-code - code",
+        "body": [
+            "`${1:Code expression}`$0"
+        ],
+        "description": "Formats text as inline code using backticks. This is designed for short code snippets, commands, or variable names that appear within a sentence."
+    },
+    "Horizontal Rule": {
+        "scope": "markdown",
+        "prefix": "insert horizontal-rule - hr",
+        "body": [
+            "",
+            "***",
+            "",
+            "$0"
+        ],
+        "description": "Inserts a horizontal rule to create a thematic break. This serves as a visual separator between sections, corresponding to the HTML `<hr>` tag."
+    },
+    "Titled Hyperlink": {
+        "scope": "markdown",
+        "prefix": "insert hyperlink - a",
+        "body": [
+            "[${1:Hyperlink text}](${2:https://example.com}${3: \"${4:Optional Title}\"})",
+            "$0"
+        ],
+        "description": "Creates a hyperlink with an optional title attribute that appears on hover. The title provides users with additional context about the link's destination before they click."
+    },
+    "Reference-Style Link": {
+        "scope": "markdown",
+        "prefix": "insert reference-link",
+        "body": [
+            "[${1:Link Text}][${2:id}]$0",
+            "",
+            "[${2:id}]: ${3:https://example.com}${4: \"${5:Optional Title}\"}"
+        ],
+        "description": "Creates a reference-style link, which declutters the document by separating the link text from the URL definition. This improves readability by moving long URLs to a centralized list."
+    },
+    "Table Column": {
+        "scope": "markdown",
+        "prefix": "insert table-column",
+        "body": "${1:|}${2:Column content} | $0",
+        "description": "Inserts a single column (cell) for a Markdown table. Columns are separated by pipes (`|`), and maintaining a consistent structure is key to a well-formed table."
+    },
+    "Table Column Alignment": {
+        "scope": "markdown",
+        "prefix": "insert table-alignment",
+        "body": "${1:|} ${2|:--- , ---: , :---: |} | $0",
+        "description": "Defines the text alignment for a table column using colons in the header row. Options include left, right, and center alignment, which control the justification of text in the column."
+    },
+    "Footnote Marker": {
+        "scope": "markdown",
+        "prefix": "insert footnote-marker",
+        "body": "[^${1:1}]$0",
+        "description": "Inserts a footnote marker in the text. This creates a numbered, superscript link that, when clicked, jumps the reader to the corresponding footnote definition at the end of the document."
+    },
+    "Footnote Definition": {
+        "scope": "markdown",
+        "prefix": "insert footnote-definition",
+        "body": "[^${1:1}]: ${2:Footnote content}",
+        "description": "Creates the definition for a footnote at the end of the document. This content is displayed when a user clicks the corresponding footnote marker in the text."
+    },
+    "Definition List": {
+        "scope": "markdown",
+        "prefix": "insert definition-list",
+        "body": [
+            "${1:Term}",
+            ": ${2:Definition}",
+            "$0"
+        ],
+        "description": "Creates a definition list entry, consisting of a term followed by its definition. This is an effective way to present a glossary of terms or a list of key-value pairs."
+    },
+    "Strikethrough Text": {
+        "scope": "markdown",
+        "prefix": "insert strikethrough",
+        "body": [
+            "~~${1:strikethrough text}~~$0"
+        ],
+        "description": "Applies strikethrough styling using double tildes. This is typically used to indicate that text is no longer relevant or has been deleted, while keeping it visible for record-keeping."
+    },
+    "Task List Item": {
+        "scope": "markdown",
+        "prefix": "insert task-list-item",
+        "body": [
+            "- [${1| ,x|}] ${2:Task description}",
+            "$0"
+        ],
+        "description": "Inserts a task list item, which can be marked as pending or complete. This is a special type of list item that renders as a checkbox, useful for tracking to-do items."
+    },
+    "Highlighted Text": {
+        "scope": "markdown",
+        "prefix": "insert highlight",
+        "body": [
+            "==${1:highlighted text}==$0"
+        ],
+        "description": "Applies a highlight effect using double equal signs. This is useful for drawing attention to a specific portion of text, similar to using a physical highlighter marker."
+    },
+    "Subscript Text": {
+        "scope": "markdown",
+        "prefix": "insert subscript",
+        "body": [
+            "~${1:subscript text}~$0"
+        ],
+        "description": "Formats text as subscript using single tildes. This is commonly used in scientific or mathematical formulas, such as chemical notations (e.g., H~2~O)."
+    },
+    "Superscript Text": {
+        "scope": "markdown",
+        "prefix": "insert superscript",
+        "body": [
+            "^${1:superscript text}^$0"
+        ],
+        "description": "Formats text as superscript using carats. This is typically used for footnotes, mathematical exponents (e.g., x^2^), or ordinal indicators."
+    }
+}

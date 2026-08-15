@@ -1,0 +1,13 @@
+{
+  "name": "locuto-rio",
+  "version": "0.0.0",
+  "homepage": "https://github.com/msmachadodossantos/locuto-rio#readme",
+  "bugs": {
+    "url": "https://github.com/msmachadodossantos/locuto-rio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msmachadodossantos/locuto-rio.git"
+  },
+  "scripts": {}
+}

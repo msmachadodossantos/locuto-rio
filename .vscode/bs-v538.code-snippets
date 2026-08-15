@@ -1,0 +1,29 @@
+// Code Snippet Refactoring
+// The optimization of code snippet components requires a systematic approach focused on functional clarity and structural integrity. The primary title must be condensed into a nominal phrase that accurately reflects the body content, strictly adhering to a five-word limit. Regarding the description, it must provide a comprehensive analysis of the functionality's underlying motivations, specifying the appropriate contexts and methodologies for its implementation.
+// Prefix taxonomy shall follow a standardized format, beginning with the term insert followed by a keyword representing the snippet’s core function. Should there be a terminological discrepancy between the descriptive term and the associated HTML element, both must be included in the naming convention (e.g., insert descriptiveWord - htmlElementName). Finally, the entirety of the script must be authored in EN-US to maintain international technical consistency.
+{
+    "Bootstrap 5 Responsive Breakpoints": {
+        "scope": "css",
+        "prefix": "insert mediaQueries",
+        "body": [
+            "/* X-Small devices (portrait phones, less than 576px) */",
+            "/* No media query for `xs` since this is the default in Bootstrap */",
+            "",
+            "/* Small devices (landscape phones, 576px and up) */",
+            "@media (min-width: 576px) {}",
+            "",
+            "/* Medium devices (tablets, 768px and up) */",
+            "@media (min-width: 768px) {}",
+            "",
+            "/* Large devices (desktops, 992px and up) */",
+            "@media (min-width: 992px) {}",
+            "",
+            "/* X-Large devices (large desktops, 1200px and up) */",
+            "@media (min-width: 1200px) {}",
+            "",
+            "/* XX-Large devices (larger desktops, 1400px and up) */",
+            "@media (min-width: 1400px) {}"
+        ],
+        "description": "Establishes a mobile-first responsive design framework to ensure optimal interface scaling. Ideal for adaptive web layouts, this methodology implements sequential CSS @media rules that target Bootstrap 5's standardized viewport widths to progressively enhance styling across varying device sizes.",
+    }
+}
