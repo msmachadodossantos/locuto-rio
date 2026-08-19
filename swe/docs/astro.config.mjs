@@ -24,11 +24,11 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Level #1',
+					label: 'Project Documentation',
 					collapsed: true,
 					items: [
 						{
-							label: 'Level #2',
+							label: 'Requirements Engineering',
 							collapsed: true,
 							items: [
 								{ autogenerate: { directory: 'project-documentation/requirements-engineering' } },
